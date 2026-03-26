@@ -1,17 +1,74 @@
 # Chicago Taxis
 
-This document presents the final project for the **ISIS1206 Data Structures** course.
+CLI application developed for the **ISIS1206 Data Structures** course to analyze Chicago taxi trip data with custom data structures (hash tables, red-black trees, priority queues, and weighted directed graphs).
 
-To run the project, download the data and execute the following commands:
-
-```bash
-javac -cp "lib/*" -encoding UTF-8 -d bin $(find src -name "*.java")
-java -cp "bin:lib/*" main.Main
-```
+![Java](https://img.shields.io/badge/Java-Project-007396?logo=java&logoColor=white)
+![Build](https://img.shields.io/badge/build-javac-informational)
+![License](https://img.shields.io/badge/license-MIT-green)
 
 ## Project: Taxi Service in the City of Chicago
 
-This project seeks to assist Chicago city administrators and authorities in their decision-making. To analyze this service, we use the data available at the URL: https://data.cityofchicago.org/Transportation/Taxi-Trips/wrvz-psew as a source of information. The source code allows you to select between 3 data subsets: small, medium, and large.
+This project seeks to assist Chicago city administrators and authorities in their decision-making. To analyze this service, we use data from: https://data.cityofchicago.org/Transportation/Taxi-Trips/wrvz-psew
+
+The source code allows selecting one of 3 subsets (`small`, `medium`, `large`) and then running three functional requirements from an interactive menu:
+
+1. Report top companies by affiliated taxis and services.
+2. Identify top taxis by daily alpha points (single date or date range).
+3. Find the best schedule to travel between two Community Areas.
+
+## Tech Stack
+
+- Java source code under `src/`
+- External libraries in `lib/`:
+  - `opencsv-5.2.jar`
+  - `commons-lang3-3.0.1.jar`
+- Manual compilation and execution with `javac` / `java`
+
+## Installation
+
+1. Ensure Java is installed.
+2. Place the dataset CSV files in a `data/` folder at repository root with names like:
+   - `taxi-trips-wrvz-psew-subset-small.csv`
+   - `taxi-trips-wrvz-psew-subset-medium.csv`
+   - `taxi-trips-wrvz-psew-subset-large.csv`
+
+## Usage
+
+Compile:
+
+```bash
+javac -cp "lib/*" -encoding UTF-8 -d bin $(find src -name "*.java")
+```
+
+Run:
+
+```bash
+java -cp "bin:lib/*" main.Main
+```
+
+When the program starts, enter dataset size (`small`, `medium`, or `large`) and then choose a functional requirement from the menu.
+
+## Project Structure
+
+```text
+src/
+  main/Main.java                    # Entry point
+  controller/Controller.java        # Program flow and menu handling
+  view/View.java                    # Console output
+  model/
+    logic/                          # Domain model and core logic
+    data_structures/                # Custom hash table, RBT, graph, PQ, etc.
+    comparators/                    # Comparators + partial heapsort utilities
+lib/                                # Third-party jars (OpenCSV, Commons Lang)
+```
+
+## Notes on Testing
+
+This repository does not include an automated test suite; validation is performed by compiling and running the CLI application.
+
+## License
+
+This project is licensed under the MIT License. See [LICENSE](LICENSE).
 
 ## Problem Representation
 

@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <base href="/chicago-taxis/" />
+    <title>Chicago Taxis</title>
+    <meta
+      name="description"
+      content="Java CLI project for analyzing Chicago taxi trips with custom data structures."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <section class="hero card">
+        <p class="eyebrow">ISIS1206 · Data Structures</p>
+        <h1>Chicago Taxis</h1>
+        <p>
+          Java CLI application that analyzes Chicago taxi trips using custom
+          hash tables, red-black trees, priority queues, and weighted directed
+          graphs.
+        </p>
+        <div class="actions">
+          <a href="https://github.com/jsurrea/chicago-taxis" target="_blank" rel="noreferrer">View on GitHub</a>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>What it does</h2>
+        <ul>
+          <li>Loads one of three CSV subsets: <code>small</code>, <code>medium</code>, <code>large</code>.</li>
+          <li>Reports top companies by affiliated taxis and by services provided.</li>
+          <li>Finds top taxis by daily alpha points on a single date or in a date range.</li>
+          <li>Computes the best travel schedule between two Community Areas.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Tech Stack</h2>
+        <div class="badges">
+          <span>Java</span>
+          <span>OpenCSV</span>
+          <span>Apache Commons Lang</span>
+          <span>Custom Data Structures</span>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Getting Started</h2>
+<pre><code>javac -cp "lib/*" -encoding UTF-8 -d bin $(find src -name "*.java")
+java -cp "bin:lib/*" main.Main</code></pre>
+        <p class="note">
+          Place datasets in <code>data/</code> using names like
+          <code>taxi-trips-wrvz-psew-subset-small.csv</code>.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>Project Structure</h2>
+<pre><code>src/
+  main/Main.java
+  controller/Controller.java
+  view/View.java
+  model/
+    logic/
+    data_structures/
+    comparators/
+lib/
+  opencsv-5.2.jar
+  commons-lang3-3.0.1.jar</code></pre>
+      </section>
+
+      <section class="card">
+        <h2>License</h2>
+        <p>MIT License</p>
+      </section>
+    </main>
+  </body>
+</html>
